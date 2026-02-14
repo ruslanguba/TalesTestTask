@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PopupDemoTest : MonoBehaviour
 {
-    [SerializeField] private PopupView popup;
+    [SerializeField] private PopupView _popup;
 
     private void Start()
     {
@@ -17,23 +17,23 @@ public class PopupDemoTest : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2)) ShowConfirm();
         if (Input.GetKeyDown(KeyCode.Alpha3)) ShowChoice();
         if (Input.GetKeyDown(KeyCode.Alpha4)) ShowLongText();
-        if (Input.GetKeyDown(KeyCode.Escape)) popup.Close();
+        if (Input.GetKeyDown(KeyCode.Escape)) _popup.Close();
     }
 
     private void ShowInfo()
     {
-        popup.Show(
+        _popup.Show(
             "Info",
-            "This is a simple one-button popup.\n\nPress 2, 3 or 4 to test other cases.",
+            "This is a simple one-_button _popup.\n\nPress 2, 3 or 4 to test other cases.",
             ("OK", null)
         );
     }
 
     private void ShowConfirm()
     {
-        popup.Show(
+        _popup.Show(
             "Exit Game",
-            "Are you sure you want to quit?\n\n(Example confirm popup)",
+            "Are you sure you want to quit?\n\n(Example confirm _popup)",
             ("Yes", () => Debug.Log("Quit confirmed (demo).")),
             ("No", null)
         );
@@ -41,7 +41,7 @@ public class PopupDemoTest : MonoBehaviour
 
     private void ShowChoice()
     {
-        popup.Show(
+        _popup.Show(
             "Change Difficulty",
             "Choose Difficulty",
             ("Easy", () => Debug.Log("Difficulty: Easy")),
@@ -52,7 +52,7 @@ public class PopupDemoTest : MonoBehaviour
 
     private void ShowLongText()
     {
-        popup.Show(
+        _popup.Show(
         "This is a long body text to test ScrollRect.",
         LongText(),
         ("OK", null)

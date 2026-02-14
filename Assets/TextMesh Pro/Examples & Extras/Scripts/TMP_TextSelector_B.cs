@@ -109,7 +109,7 @@ namespace TMPro.Examples
                     // Determine the center point of the character.
                     Vector2 charMidBasline = (vertices[vertexIndex + 0] + vertices[vertexIndex + 2]) / 2;
 
-                    // Need to translate all 4 vertices of the character to aligned with middle of character / baseline.
+                    // Need to translate _all 4 vertices of the character to aligned with middle of character / baseline.
                     // This is needed so the matrix TRS is applied at the origin for each character.
                     Vector3 offset = charMidBasline;
 
@@ -168,7 +168,7 @@ namespace TMPro.Examples
                 //Check if Mouse intersects any words and if so assign a random color to that word.
                 int wordIndex = TMP_TextUtilities.FindIntersectingWord(m_TextMeshPro, Input.mousePosition, m_Camera);
 
-                // Clear previous word selection.
+                // Clear previous word _selection.
                 if (m_TextPopup_RectTransform != null && m_selectedWord != -1 && (wordIndex == -1 || wordIndex != m_selectedWord))
                 {
                     TMP_WordInfo wInfo = m_TextMeshPro.textInfo.wordInfo[m_selectedWord];
@@ -241,14 +241,14 @@ namespace TMPro.Examples
                 // Check if mouse intersects with any links.
                 int linkIndex = TMP_TextUtilities.FindIntersectingLink(m_TextMeshPro, Input.mousePosition, m_Camera);
 
-                // Clear previous link selection if one existed.
+                // Clear previous link _selection if one existed.
                 if ((linkIndex == -1 && m_selectedLink != -1) || linkIndex != m_selectedLink)
                 {
                     m_TextPopup_RectTransform.gameObject.SetActive(false);
                     m_selectedLink = -1;
                 }
 
-                // Handle new Link selection.
+                // Handle new Link _selection.
                 if (linkIndex != -1 && linkIndex != m_selectedLink)
                 {
                     m_selectedLink = linkIndex;
@@ -338,7 +338,7 @@ namespace TMPro.Examples
             /*
             int wordIndex = TMP_TextUtilities.FindIntersectingWord(m_TextMeshPro, Input.mousePosition, m_Camera);
 
-            // Clear previous word selection.
+            // Clear previous word _selection.
             if (m_TextPopup_RectTransform != null && m_selectedWord != -1 && (wordIndex == -1 || wordIndex != m_selectedWord))
             {
                 TMP_WordInfo wInfo = m_TextMeshPro.textInfo.wordInfo[m_selectedWord];
@@ -364,7 +364,7 @@ namespace TMPro.Examples
                 m_selectedWord = -1;
             }
 
-            // Handle word selection
+            // Handle word _selection
             if (wordIndex != -1 && wordIndex != m_selectedWord)
             {
                 m_selectedWord = wordIndex;

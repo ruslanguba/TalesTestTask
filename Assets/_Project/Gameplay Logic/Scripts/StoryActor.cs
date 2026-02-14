@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class StoryActor : TrackableEntityBase
 {
-    protected override EntityType Type => EntityType.StoryActor;
-    [SerializeField] private float value = 8;
-    public float Value => value;
+    public override EntityType Type => EntityType.StoryActor;
+    [SerializeField] private float _value = 8;
+    public override float Value => _value;
 }

@@ -3,21 +3,21 @@ using UnityEngine;
 
 public class DemoTestController : MonoBehaviour
 {
-    [SerializeField] private TrackableEntityBase[] prefabs;
-    [SerializeField] private EntitiesSpawner spawner;
-    [SerializeField] private EntitiesTracker tracker;
+    [SerializeField] private TrackableEntityBase[] _prefabs;
+    [SerializeField] private EntitiesSpawner _spawner;
+    [SerializeField] private EntitiesTracker _tracker;
 
     public void OnClickCreate()
     {
-        if (prefabs == null || prefabs.Length == 0) return;
+        if (_prefabs == null || _prefabs.Length == 0) return;
 
-        int idx = Random.Range(0, prefabs.Length);
-        spawner.SpawnEntity(prefabs[idx]);
+        int idx = Random.Range(0, _prefabs.Length);
+        _spawner.SpawnAtRandomPosition(_prefabs[idx]);
     }
 
     public void OnClickDiactivate()
     {
-        var list = tracker.GetActive();
+        var list = _tracker.GetActive();
         var entity = PickRandom(list);
         if (entity != null)
             entity.gameObject.SetActive(false);
@@ -25,7 +25,7 @@ public class DemoTestController : MonoBehaviour
 
     public void OnClickActivate()
     {
-        var list = tracker.GetInactive();
+        var list = _tracker.GetInactive();
         var entity = PickRandom(list);
         if (entity != null)
             entity.gameObject.SetActive(true);
@@ -33,7 +33,7 @@ public class DemoTestController : MonoBehaviour
 
     public void OnClickDestroy()
     {
-        var list = tracker.GetAll();
+        var list = _tracker.GetAll();
         var entity = PickRandom(list);
         if (entity != null)
             Destroy(entity.gameObject);

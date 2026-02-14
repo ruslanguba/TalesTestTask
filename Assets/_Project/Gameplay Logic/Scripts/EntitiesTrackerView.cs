@@ -10,6 +10,7 @@ public class EntitiesTrackerView : MonoBehaviour
     private void OnEnable()
     {
         _tracker.StatsChanged += UpdateUI;
+        UpdateUI();
     }
 
     private void OnDisable()
@@ -17,7 +18,7 @@ public class EntitiesTrackerView : MonoBehaviour
         _tracker.StatsChanged -= UpdateUI;
     }
 
-    private void UpdateUI()
+    protected virtual void UpdateUI()
     {
         _allEntities.text = _tracker.TotalCount.ToString();
         _activeEntities.text = _tracker.ActiveCount.ToString();

@@ -11,15 +11,12 @@ This task required implementing a simple and safe way to:
   - SetActive(false)
   - Component disable
 
-The solution avoids polling methods such as `FindObjectsOfType` and keeps the system lightweight and production-friendly.
-
 ---
 
 ## Structure
 
 The system consists of:
 
-- `ITrackableEntity` – defines the contract
 - `TrackableEntityBase` – handles automatic registration
 - `EntitiesTracker` – stores and returns active entities
 

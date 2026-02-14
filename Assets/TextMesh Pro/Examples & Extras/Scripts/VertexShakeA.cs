@@ -119,7 +119,7 @@ namespace TMPro.Examples
                         // Get the vertices of the mesh used by this text element (character or sprite).
                         Vector3[] sourceVertices = textInfo.meshInfo[materialIndex].vertices;
 
-                        // Need to translate all 4 vertices of each quad to aligned with center of character.
+                        // Need to translate _all 4 vertices of each quad to aligned with center of character.
                         // This is needed so the matrix TRS is applied at the origin for each character.
                         copyOfVertices[materialIndex][vertexIndex + 0] = sourceVertices[vertexIndex + 0] - centerOfLine;
                         copyOfVertices[materialIndex][vertexIndex + 1] = sourceVertices[vertexIndex + 1] - centerOfLine;

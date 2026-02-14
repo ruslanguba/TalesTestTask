@@ -6,24 +6,22 @@ public class EntitiesTracker : MonoBehaviour
 {
     public event Action StatsChanged;
 
-    private readonly HashSet<TrackableEntityBase> all = new();
-    private readonly HashSet<TrackableEntityBase> active = new();
-    private readonly HashSet<TrackableEntityBase> inactive = new();
-
-    public int TotalCount => all.Count;
-    public int ActiveCount => active.Count;
-    public int InactiveCount => inactive.Count;
-    public List<TrackableEntityBase> GetAll() => new(all);
-    public List<TrackableEntityBase> GetActive() => new(active);
-    public List<TrackableEntityBase> GetInactive() => new(inactive);
+    private readonly HashSet<TrackableEntityBase> _all = new();
+    private readonly HashSet<TrackableEntityBase> _active = new();
+    private readonly HashSet<TrackableEntityBase> _inactive = new();
+    public int TotalCount => _all.Count;
+    public int ActiveCount => _active.Count;
+    public int InactiveCount => _inactive.Count;
+    public List<TrackableEntityBase> GetAll() => new(_all);
+    public List<TrackableEntityBase> GetActive() => new(_active);
+    public List<TrackableEntityBase> GetInactive() => new(_inactive);
 
     public void Register(TrackableEntityBase entity)
     {
         if (entity == null) return;
 
-        all.Add(entity);
+        _all.Add(entity);
         SetActiveState(entity, entity.IsActive);
-        StatsChanged?.Invoke();
     }
 
     public void SetActiveState(TrackableEntityBase entity, bool isActive)
@@ -32,13 +30,13 @@ public class EntitiesTracker : MonoBehaviour
 
         if (isActive)
         {
-            active.Add(entity);
-            inactive.Remove(entity);
+            _active.Add(entity);
+            _inactive.Remove(entity);
         }
         else
         {
-            inactive.Add(entity);
-            active.Remove(entity);
+            _inactive.Add(entity);
+            _active.Remove(entity);
         }
         StatsChanged?.Invoke();
     }
@@ -47,9 +45,9 @@ public class EntitiesTracker : MonoBehaviour
     {
         if (entity == null) return;
 
-        active.Remove(entity);
-        inactive.Remove(entity);
-        all.Remove(entity);
+        _active.Remove(entity);
+        _inactive.Remove(entity);
+        _all.Remove(entity);
         StatsChanged?.Invoke();
     }
 }

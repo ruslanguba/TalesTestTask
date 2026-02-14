@@ -115,7 +115,7 @@ namespace TMPro.Examples
                     // Determine the center point of each character.
                     Vector2 charMidBasline = (sourceVertices[vertexIndex + 0] + sourceVertices[vertexIndex + 2]) / 2;
 
-                    // Need to translate all 4 vertices of each quad to aligned with middle of character / baseline.
+                    // Need to translate _all 4 vertices of each quad to aligned with middle of character / baseline.
                     // This is needed so the matrix TRS is applied at the origin for each character.
                     Vector3 offset = charMidBasline;
 

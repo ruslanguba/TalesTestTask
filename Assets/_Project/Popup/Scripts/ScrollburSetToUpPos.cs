@@ -1,20 +1,27 @@
-using Unity.VisualScripting;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class ScrollburSetToUpPos : MonoBehaviour
 {
-    private Scrollbar _scroller;
+    private ScrollRect _scrollRect;
 
     private void Awake()
     {
-        _scroller = GetComponent<Scrollbar>();
+        _scrollRect = GetComponent<ScrollRect>();
     }
 
     private void OnEnable()
     {
-        _scroller.value = 1;
+        StartCoroutine(ResetNextFrame());
     }
 
+    private IEnumerator ResetNextFrame()
+    {
+        yield return null;
+
+        Canvas.ForceUpdateCanvases();
+
+        _scrollRect.verticalNormalizedPosition = 1f;
+    }
 }

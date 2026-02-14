@@ -193,7 +193,7 @@ namespace TMPro
                 // Check if mouse intersects with any links.
                 int linkIndex = TMP_TextUtilities.FindIntersectingLink(m_TextComponent, Input.mousePosition, m_Camera);
 
-                // Handle new Link selection.
+                // Handle new Link _selection.
                 if (linkIndex != -1 && linkIndex != m_selectedLink)
                 {
                     m_selectedLink = linkIndex;
@@ -208,7 +208,7 @@ namespace TMPro
             }
             else
             {
-                // Reset all selections given we are hovering outside the text container bounds.
+                // Reset _all selections given we are hovering outside the text _container bounds.
                 m_selectedLink = -1;
                 m_lastCharIndex = -1;
                 m_lastWordIndex = -1;

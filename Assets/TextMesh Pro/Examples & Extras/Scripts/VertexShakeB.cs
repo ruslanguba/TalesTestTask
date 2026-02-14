@@ -121,7 +121,7 @@ namespace TMPro.Examples
                         // Determine the center point of each character at the baseline.
                         Vector3 charCenter = (sourceVertices[vertexIndex + 0] + sourceVertices[vertexIndex + 2]) / 2;
 
-                        // Need to translate all 4 vertices of each quad to aligned with center of character.
+                        // Need to translate _all 4 vertices of each quad to aligned with center of character.
                         // This is needed so the matrix TRS is applied at the origin for each character.
                         copyOfVertices[materialIndex][vertexIndex + 0] = sourceVertices[vertexIndex + 0] - charCenter;
                         copyOfVertices[materialIndex][vertexIndex + 1] = sourceVertices[vertexIndex + 1] - charCenter;
@@ -146,7 +146,7 @@ namespace TMPro.Examples
                         copyOfVertices[materialIndex][vertexIndex + 2] += charCenter;
                         copyOfVertices[materialIndex][vertexIndex + 3] += charCenter;
 
-                        // Need to translate all 4 vertices of each quad to aligned with the center of the line.
+                        // Need to translate _all 4 vertices of each quad to aligned with the center of the line.
                         // This is needed so the matrix TRS is applied from the center of the line.
                         copyOfVertices[materialIndex][vertexIndex + 0] -= centerOfLine;
                         copyOfVertices[materialIndex][vertexIndex + 1] -= centerOfLine;

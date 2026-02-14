@@ -326,8 +326,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _entitiesTracker: {fileID: 954746727}
-  min: {x: -8, y: 0}
-  max: {x: 8, y: 4}
+  _min: {x: -8, y: 0}
+  _max: {x: 8, y: 4}
   _parent: {fileID: 1904628003}
 --- !u!4 &115867054
 Transform:
@@ -1984,12 +1984,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46e3b0a8b2c071b45a2f8a1078a504c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabs:
+  _prefabs:
   - {fileID: -4739404576908973575, guid: ab04959f52db3c744b8073940b8eb04c, type: 3}
   - {fileID: 1074415693688084878, guid: a259809fb70d8da40b4f00cb165c4ac9, type: 3}
   - {fileID: 7336102432982698976, guid: 17a0b31d6fb5842418d24339c1dffa7d, type: 3}
-  spawner: {fileID: 115867053}
-  tracker: {fileID: 954746727}
+  _spawner: {fileID: 115867053}
+  _tracker: {fileID: 954746727}
 --- !u!4 &1803482403
 Transform:
   m_ObjectHideFlags: 0
@@ -2036,54 +2036,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1939989467
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1939989468}
-  - component: {fileID: 1939989469}
-  m_Layer: 0
-  m_Name: EntitiesSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1939989468
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939989467}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1939989469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1939989467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 199fb739bf320d34483563dc6fb9f0cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _entitiesTracker: {fileID: 0}
-  min: {x: -8, y: -4}
-  max: {x: 8, y: 4}
-  _parent: {fileID: 0}
 --- !u!1 &1947738397
 GameObject:
   m_ObjectHideFlags: 0
@@ -2414,7 +2366,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 744815462}
   - {fileID: 1297003307}
-  - {fileID: 1939989468}
   - {fileID: 561816908}
   - {fileID: 991642433}
   - {fileID: 1904628003}

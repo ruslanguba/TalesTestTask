@@ -68,14 +68,14 @@ namespace TMPro.Examples
                 // Check if mouse intersects with any links.
                 int linkIndex = TMP_TextUtilities.FindIntersectingLink(m_TextMeshPro, Input.mousePosition, m_Camera);
 
-                // Clear previous link selection if one existed.
+                // Clear previous link _selection if one existed.
                 if ((linkIndex == -1 && m_selectedLink != -1) || linkIndex != m_selectedLink)
                 {
                     //m_TextPopup_RectTransform.gameObject.SetActive(false);
                     m_selectedLink = -1;
                 }
 
-                // Handle new Link selection.
+                // Handle new Link _selection.
                 if (linkIndex != -1 && linkIndex != m_selectedLink)
                 {
                     m_selectedLink = linkIndex;
